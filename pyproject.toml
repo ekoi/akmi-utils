@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "akmi-utils"
+version = "0.1.0"
+description = ""
+authors = ["ekoi <eko.indarto@dans.knaw.nl>"]
+readme = "README.md"
+packages = [{include = "akmi_utils", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+toml = "^0.10.2"
+pyyaml = "^6.0.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
