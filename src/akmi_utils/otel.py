@@ -1,4 +1,4 @@
-
+import logging
 import time
 from typing import Tuple
 
@@ -49,6 +49,16 @@ REQUESTS_IN_PROGRESS = Gauge(
     "Gauge of requests by method and path currently being processed",
     ["method", "path", "app_name"],
 )
+
+class TraceContextFilter(logging.Filter):
+    def filter(self, record: logging.LogRecord) -> bool:
+        span = trace.get_current_span()
+        if span.get_span_context().is_valid:
+            record.otelTraceID = span.get_span_context().trace_id
+            record.otelSpanID = span.get_span_context().span_id
+        else:
+            return False
+        return True
 
 
 class PrometheusMiddleware(BaseHTTPMiddleware):
