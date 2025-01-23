@@ -60,6 +60,9 @@ class TraceContextFilter(logging.Filter):
             return False
         return True
 
+class MetricsEndpointFilter(logging.Filter):
+    def filter(self, record: logging.LogRecord) -> bool:
+        return record.getMessage().find("GET /metrics") == -1
 
 class PrometheusMiddleware(BaseHTTPMiddleware):
     def __init__(self, app: ASGIApp, app_name: str = "app") -> None:
