@@ -3,7 +3,8 @@ import tempfile
 import os
 import toml
 import yaml
-from src.convert_toml_yaml import convert_toml_to_yaml
+
+from src.akmi_utils.convert_toml_yaml import convert_toml_to_yaml
 
 
 class TestConvertTomlToYaml(unittest.TestCase):
@@ -18,10 +19,10 @@ class TestConvertTomlToYaml(unittest.TestCase):
     def test_conversion(self):
         # Define sample TOML content
         toml_content = {
-            'title': 'TOML Example',
+            'title': 'Title Example',
             'owner': {
-                'name': 'Tom Preston-Werner',
-                'dob': '1979-05-27T07:32:00Z'
+                'name': 'Eko Indarto',
+                'orcid': '0000-0001-6208-6637'
             }
         }
 
