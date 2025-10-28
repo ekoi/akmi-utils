@@ -1,0 +1,10 @@
+[default]
+
+otlp_enable = false
+log_file = "@format {env[BASE_DIR]}/akmi.log"
+log_level = 10
+log_format = "%(asctime)s %(levelname)s %(name)s %(threadName)s : %(message)s"
+
+mail_usr = "e.indarto@gmail.com"
+mail_pass = "Your password here"
+mail_to = ["eko.indarto@dans.knaw.nl"]

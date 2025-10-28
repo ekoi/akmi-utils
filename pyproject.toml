@@ -1,6 +1,6 @@
 [project]
 name = "akmi-utils"
-version = "0.1.8"
+version = "0.1.9.0"
 authors = [
     {name = "Eko Indarto", email = "eko.indarto@dans.knaw.nl"}
 ]
@@ -8,6 +8,7 @@ description = "Utilities for AKMI integration and instrumentation (FastAPI helpe
 readme = "README.md"
 requires-python = ">=3.12.8"
 dependencies = [
+    "dynaconf>=3.2.12",
     "fastapi>=0.120.0",
     "httpx>=0.28.1",
     "opentelemetry-distro>=0.59b0",
